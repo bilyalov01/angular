@@ -18,7 +18,7 @@
 }
 
 .box:hover {
-  background-color: rgba(35, 52, 72, 255);
+  background-color: #1976d2;
   color: white;
 }
 
@@ -33,12 +33,10 @@
 h1,
 h2 {
   text-align: center;
-  text-decoration: underline;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 h1 {
-  color: rgba(35, 52, 72, 255);
+  color: #1976d2;
   padding: 10px;
-  border-bottom: 2px solid rgba(161, 161, 161, 0.5);
 }

@@ -9,5 +9,5 @@ export class CategoriesComponent implements OnInit {
   categories = categories;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 }
