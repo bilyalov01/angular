@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { products } from "./../products";
+import { categories } from "../categories";
 import { ActivatedRoute } from "@angular/router";
-import { CartService } from "./../cart.service";
 
 @Component({
   selector: "app-product-item",
@@ -9,22 +8,26 @@ import { CartService } from "./../cart.service";
   styleUrls: ["./product-item.component.css"]
 })
 export class ProductItemComponent implements OnInit {
-  product;
-  constructor(
-    private route: ActivatedRoute,
-    private cartService: CartService
-  ) {}
+  categories = categories;
+  products;
+  categoryIdFromRoute;
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    const productIdFromRoute = Number(routeParams.get("productId"));
-
-    // Find the product that correspond with the id provided in route.
-    this.product = products.find(product => product.id === productIdFromRoute);
+    this.categoryIdFromRoute = Number(routeParams.get("categoryId"));
+    this.categories = this.getLocalStorage();
+    this.products = this.categories.find(
+      category => category.id === this.categoryIdFromRoute
+    ).products;
+  }
+  getLocalStorage() {
+    let storage = JSON.parse(localStorage.getItem("categories"));
+    return storage === null ? categories : storage;
   }
 
-  addToCart(product) {
-    this.cartService.addToCart(product);
-    window.alert("Your product has been added to the cart!");
+  setLocalStorage() {
+    this.categories[this.categoryIdFromRoute].products = this.products;
+    localStorage.setItem("categories", JSON.stringify(this.categories));
   }
 }

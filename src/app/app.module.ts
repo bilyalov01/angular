@@ -8,6 +8,7 @@ import { TopBarComponent } from "./top-bar/top-bar.component";
 import { ProductListComponent } from "./product-list/product-list.component";
 import { ProductItemComponent } from "./product-item/product-item.component";
 import { ProductDetailsComponent } from "./product-details/product-details.component";
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { ProductDetailsComponent } from "./product-details/product-details.compo
     TopBarComponent,
     ProductListComponent,
     ProductItemComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CategoriesComponent
   ],
   bootstrap: [AppComponent]
 })
