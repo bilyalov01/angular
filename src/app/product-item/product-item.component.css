@@ -1,13 +1,10 @@
-.product-item {
-  margin-top: 130px;
-}
 .box {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
   padding-bottom: 20px;
-  border-bottom: 2px solid rgba(161, 161, 161, 0.5);
+  border-bottom: 2px solid darkgray;
 }
 .product-info {
   display: flex;
@@ -18,7 +15,8 @@
   height: 200px;
 }
 .product-info .info {
-  width: 40%;
+  margin-left: 100px;
+  width: 400px;
 }
 .btn {
   display: flex;
@@ -35,20 +33,11 @@ button {
 a {
   color: black;
 }
-button a {
-  text-decoration: none;
-  padding: 3%;
-  font-size: 110%;
-}
-.btn {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 40px;
-}
+
 button {
-  width: 20%;
+  width: 80px;
   padding: 2%;
   background-color: #1976d2;
-  border: 1px solid rgb(0, 0, 0);
+  border: none;
   border-radius: 3px;
 }
